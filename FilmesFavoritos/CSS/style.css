@@ -34,6 +34,7 @@ body {
 
 .page-subtitle {
     margin-top: 10px;
+    background-color: #000;
 }
 
 img {
@@ -59,5 +60,27 @@ img {
 
 .botao:hover {
     background-color: red;
-    
+
+}
+
+#erro {
+    background-color: red;
+    color: #fff;
+}
+
+#catalogo {
+    display: flex;
+    flex-flow: wrap;
+    padding: 1rem;
+}
+
+.retangulo {
+    position: absolute;
+    width: 50%;
+    height: 55%;
+    background-color: #000;
+    z-index: -1;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    left: 21rem;
 }
