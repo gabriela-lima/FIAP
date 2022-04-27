@@ -1,0 +1,63 @@
+/* margin ou padding sequencia de informacao:
+    cima direita baixo esquerda */
+
+/* Tirando as configuraçoes iniciais de tudo */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+    background-color: #000;
+    background-size: cover;
+    background-position: center top;
+    background-image: url("https://feriasdecinema.com/wp-content/uploads/2018/07/poderoso-chefao-cenarios-italia.jpg");
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 1.5rem;
+    /* height: 100vh; */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.page-title {
+    color: rgb(234,124,255);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+.page-subtitle {
+    margin-top: 10px;
+}
+
+img {
+    max-height: 250px;
+}
+
+#filme, #titulo {
+    width: 30rem;
+    margin: 1rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.botao {
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #a71601;
+    color: #fff;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: red;
+    
+}
