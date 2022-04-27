@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Filmes</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">FIAPFlix</h1>
+        <br><br>
+
+        <div class="retangulo"></div>
+        <div>
+            <label for="filme">Cole abaixo o endereço da imagem do filme: <br>
+                <input type="text" id="filme" placeholder="Cole aqui o endereço da imagem do filme">
+            </label>
+        </div>
+        <div>
+            <label for="titulo">Digite abaixo o título do filme: <br>
+                <input type="text" name="titulo" id="titulo" placeholder="Escreva aqui o título do filme">
+            </label>
+        </div>
+        <button class="botao" type="submit" onclick="cadastrar()">Cadastrar</button>
+        <p id="erro"></p>
+
+        <h2>Lista de Filmes Favoritos</h2>
+        <div id="catalogo">
+            
+        </div>
+    </div>
+</body>
+</html>
