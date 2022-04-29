@@ -21,3 +21,10 @@ let listaDeTitulos = [
 let catalogo = document.querySelector('#catalogo')
 let i = 0
 let erro = document.querySelector('#erro')
+
+for (i; i < listaDeFilmes.length; i++){
+    //Escrevendo em html dentro do js
+    catalogo.innerHTML += `<div class="filme">
+        <img src=${listaDeFilmes[i]}><figcaption>${listaDeTitulos[i]}</figcaption>
+    </div>`
+}

@@ -84,3 +84,8 @@ img {
     opacity: 0.8;
     left: 21rem;
 }
+
+.filme{
+    border: 2px solid white;
+    padding: 1.5rem;
+}
