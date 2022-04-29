@@ -28,3 +28,26 @@ for (i; i < listaDeFilmes.length; i++){
         <img src=${listaDeFilmes[i]}><figcaption>${listaDeTitulos[i]}</figcaption>
     </div>`
 }
+
+let filmeRepetido = true;
+
+function cadastrar(){
+    // Pegando o valor do input do url 
+    let novoFilme = document.querySelector('#filme').value
+    
+    // Pegando o valor do input do titulo
+    let novoTitulo = document.querySelector('#titulo').value
+    if (listaDeFilmes.includes(novoFilme) || listaDeTitulos.includes(novoTitulo)) {
+        //Acionando o erro no html
+        erro.innerHTML = `Filme ${novoTitulo} já cadastrado.`
+      }else{
+        listaDeFilmes.push(novoFilme)
+        listaDeTitulos.push(novoTitulo)
+        //Tirando a mensagem de erro apos cadastrar o filme
+        erro.innerHTML = ''
+
+        //?vamos chamar uma função para mostrar os filmes
+      }
+      document.querySelector('#filme').value = ''
+      document.querySelector('#titulo').value = ''
+}
