@@ -25,12 +25,13 @@ let erro = document.querySelector('#erro')
 for (i; i < listaDeFilmes.length; i++){
     //Escrevendo em html dentro do js
     catalogo.innerHTML += `<div class="filme">
-        <img src=${listaDeFilmes[i]}><figcaption>${listaDeTitulos[i]}</figcaption>
+        <img src=${listaDeFilmes[i]} alt= ${listaDeTitulos[i]}><figcaption>${listaDeTitulos[i]}
     </div>`
 }
 
 let filmeRepetido = true;
 
+// funcao de cadastrar os filmes no site
 function cadastrar(){
     // Pegando o valor do input do url 
     let novoFilme = document.querySelector('#filme').value
@@ -45,9 +46,19 @@ function cadastrar(){
         listaDeTitulos.push(novoTitulo)
         //Tirando a mensagem de erro apos cadastrar o filme
         erro.innerHTML = ''
-
-        //?vamos chamar uma função para mostrar os filmes
+        mostrarFilmes()
       }
       document.querySelector('#filme').value = ''
       document.querySelector('#titulo').value = ''
+}
+
+// funcao que mostra os filmes
+function mostrarFilmes(){
+    do{
+        catalogo.innerHTML += `
+        <div class= "filme">
+            <img src = ${listaDeFilmes[i]} alt= ${listaDeTitulos[i]}><figcaption>${listaDeTitulos[i]}
+        </div>`
+        i++
+    }while (i < listaDeFilmes.length)
 }

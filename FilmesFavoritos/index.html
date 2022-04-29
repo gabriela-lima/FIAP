@@ -13,18 +13,19 @@
         <h1 class="page-title">FIAPFlix</h1>
         <br><br>
 
-        <div class="retangulo"></div>
-        <div>
-            <label for="filme">Cole abaixo o endereço da imagem do filme: <br>
-                <input type="text" id="filme" placeholder="Cole aqui o endereço da imagem do filme">
-            </label>
+        <div class="retangulo">
+            <div>
+                <label for="filme">Cole abaixo o endereço da imagem do filme: <br>
+                    <input type="text" id="filme" placeholder="Cole aqui o endereço da imagem do filme">
+                </label>
+            </div>
+            <div>
+                <label for="titulo">Digite abaixo o título do filme: <br>
+                    <input type="text" name="titulo" id="titulo" placeholder="Escreva aqui o título do filme">
+                </label>
+            </div>
+            <button class="botao" type="submit" onclick="cadastrar()">Cadastrar</button>
         </div>
-        <div>
-            <label for="titulo">Digite abaixo o título do filme: <br>
-                <input type="text" name="titulo" id="titulo" placeholder="Escreva aqui o título do filme">
-            </label>
-        </div>
-        <button class="botao" type="submit" onclick="cadastrar()">Cadastrar</button>
         <p id="erro"></p>
 
         <h2 class="page-subtitle">Lista de Filmes Favoritos</h2>

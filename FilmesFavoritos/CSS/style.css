@@ -39,6 +39,8 @@ body {
 
 img {
     max-height: 250px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 1rem #fff;
 }
 
 #filme, #titulo {
@@ -75,17 +77,23 @@ img {
 }
 
 .retangulo {
-    position: absolute;
-    width: 50%;
-    height: 55%;
-    background-color: #000;
-    z-index: -1;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 100%;
+    height: 100%; */
+    width: 40rem;
+    height: 20rem;
+    background-color: #00000080;
+    /* z-index: -1; */
     border-radius: 0.5rem;
-    opacity: 0.8;
-    left: 21rem;
+    left: 5rem;
 }
 
 .filme{
     padding: 1.5rem;
     width: 13rem;
+    background-color: #00000050;
+    margin: 1rem;
+    border-radius: 1rem;
 }
