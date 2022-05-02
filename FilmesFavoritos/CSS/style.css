@@ -78,8 +78,9 @@ img {
 
 .retangulo {
     position: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     /* width: 100%;
     height: 100%; */
     width: 80%;
