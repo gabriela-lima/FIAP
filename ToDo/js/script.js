@@ -77,7 +77,7 @@ function showTasks(){
     // arrow function
     listArr.forEach((element, index) => {
         newLiTag += `
-        <li>${element}<span onclick="deleteTask(${index})"></span></li>
+        <li>${element}<span onclick="deleteTask(${index})">apagar</span></li>
         `
     })
     // adicionando uma nova li dentro da nossa lista no hmtl
@@ -92,6 +92,15 @@ function deleteTask(index){
     listArr = JSON.parse(getlocalstorage)
     listArr.splice(index, 1)
     // depois de remover o item atualize novamente o armazenamento local
+    localStorage.setItem('New Todo', JSON.stringify(listArr))
+    showTasks()
+}
+
+// funcao que deleta todas as funcoes
+deleteAllBtn.onclick = _ => {
+    //array vazio
+    listArr = []
+    // apos deletar todas as tarefas, atualizar novamente o armazenamento local
     localStorage.setItem('New Todo', JSON.stringify(listArr))
     showTasks()
 }
