@@ -32,16 +32,16 @@ addBtn.onclick = _ => {
     if(getLocalStorage == null){
         // Vamos criar um array em branco
         // criando a variavel sem declarar, assim ela pode ser usada globalmente, apesar de ser criada no if
-        lisArr = []
+        listArr = []
     } else{
         // empurrando ou adicionando dados do usuario a nossa lista
         // convertendo o getlocalstorage para json com o parse
-        lisArr = JSON.parse(getLocalStorage)
+        listArr = JSON.parse(getLocalStorage)
     }
     // empurrando para dentro do array os dados do usuario
-    lisArr.push(userData)
+    listArr.push(userData)
     // transformando um objeto js em um fragmento js
-    localStorage.setItem('New Todo', JSON.stringify(lisArr))
+    localStorage.setItem('New Todo', JSON.stringify(listArr))
     // chamando a funcao showTasks
     showTasks()
 }
@@ -53,17 +53,17 @@ function showTasks(){
     // variavel vai pegar o armazenamento local
     let getLocalStorage = localStorage.getItem('New Todo')
     if(getLocalStorage == null){
-        lisArr = []
+        listArr = []
     } else {
         // transformando um objeto js em um fragmento js
-        lisArr = JSON.parse(getLocalStorage)
+        listArr = JSON.parse(getLocalStorage)
     }
     // o numero de tarefas que tem na lista
     const pendingNum = document.querySelector('.pendingNum')
-    pendingNum.textContent = lisArr.length
+    pendingNum.textContent = listArr.length
 
     // se o tamanho do array for maior que zero
-    if(lisArr.length > 0)
+    if(listArr.length > 0)
     {
         // ativa a classe active
         deleteAllBtn.classList.add('active')
@@ -75,14 +75,23 @@ function showTasks(){
     // Desativando o botao de adicionar
     addBtn.classList.remove('active')
     // arrow function
-    lisArr.forEach((element, index) => {
+    listArr.forEach((element, index) => {
         newLiTag += `
-        <li>${element}<span onclick="deleteTask()"></span></li>
+        <li>${element}<span onclick="deleteTask(${index})"></span></li>
         `
     })
     // adicionando uma nova li dentro da nossa lista no hmtl
     todoList.innerHTML = newLiTag
     // uma vez adicionada a tarefa, o campo entrada fica vazio
     inputBox.value = ''
+}
 
+// funcao para deletar uma tarefa especifica
+function deleteTask(index){
+    let getlocalstorage = localStorage.getItem('New Todo')
+    listArr = JSON.parse(getlocalstorage)
+    listArr.splice(index, 1)
+    // depois de remover o item atualize novamente o armazenamento local
+    localStorage.setItem('New Todo', JSON.stringify(listArr))
+    showTasks()
 }
