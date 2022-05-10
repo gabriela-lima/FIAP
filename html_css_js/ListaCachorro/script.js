@@ -4,9 +4,12 @@ function pegaDados(){
     // carrega as informaçoes de acordo com o que vc manda
     // recebe um parametro JSON
     $.ajax({
-        // pegando os dados da url
+        // pegando os dados da url (endereço externo)
         url: "https://iot.14mob.com/lista.json",
+        // eh um parametro do que deve ser pego
+        // se estiver vazio nao esta filtrando esta pegando todos os dados do endereço externo
         data: "",
+        // o retorno vai para a variavel retorno (os dados do endereco externo)
         success: function(retorno){
             tratarDados(retorno)
         },
@@ -20,6 +23,8 @@ function tratarDados(dados){
 
     // pegando a referencia da classe do html
     // usando o seletor do jquery
+    // sincronizando a variavel lista com a classe listaCachorro
+    // tudo que mudar na variavel lista muda tbm na classe do html
     var lista = $(".listaCachorro")
 
     // usando o for do jquery
@@ -37,7 +42,7 @@ function tratarDados(dados){
                 <img src="${valor.imagem}">
                 <h5 class="card-title">${valor.nome}</h5>
                 <p class="card-text">${valor.descricao}</p>
-                <button type="button" class="btn btn-primary abrirModal" onclick= "abrirModal(${valor.id}, ${valor.nome}, ${valor.imagem}, ${valor.descricao})">
+                <button type="button" class="btn btn-primary" onclick= "abrirModal(${valor.id}, ${valor.nome}, ${valor.imagem}, ${valor.descricao})">
                     Detalhes
                 </button>
                 </div>
